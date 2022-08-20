@@ -250,27 +250,27 @@ class User extends MY_Controller
             redirect('login');
             return false;
         }
-        
-        if($this->input->post()){
+
+        if ($this->input->post()) {
             $feedback = trim($this->input->post("feedback"));
-            if(empty($feedback)){
+            if (empty($feedback)) {
                 $this->session->set_flashdata("error", "You Cannot Post Empty!!");
                 $this->render_user("feedback", array("feedback", 0));
                 $this->session->set_flashdata("error", 0);
                 return false;
-            }else{
+            } else {
                 $values = array(
-                    "user_id" => $this->get_user_id(),
-                    "feedback" => $feedback
+                    "user_id"  => $this->get_user_id(),
+                    "feedback" => $feedback,
                 );
-                if($this->crud->insert_data("feedbacks", $values)){
+                if ($this->crud->insert_data("feedbacks", $values)) {
                     $this->session->set_flashdata("success", "Thank You For Your Precious Feedback.");
                     $this->render_user("feedback", array("feedback", 0));
                     $this->session->set_flashdata("success", 0);
                     return true;
-                }else{
+                } else {
                     $this->session->set_flashdata("error", "Some Internal Error Has Occurred!!");
-                    $this->render_user("feedback", array("feedback", 0), $data);
+                    $this->render_user("feedback", array("feedback", 0));
                     $this->session->set_flashdata("error", 0);
                     return false;
                 }

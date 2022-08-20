@@ -10,30 +10,30 @@
                             <br> will be distracted by the readable.</p>
                     </div>
                     <form action="" method="post">
-                        <?php if($this->session->flashdata('login-error')){  ?>
+                        <?php if ($this->session->flashdata('login-error')) {?>
                         <div class="alert alert-danger" role="alert">
                             <b>
-                                <?= $this->session->flashdata('login-error'); ?>
+                                <?=$this->session->flashdata('login-error');?>
                             </b>
                         </div>
-                        <?php } ?>
+                        <?php }?>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" name="email" class="form-control" value="<?= set_value('email'); ?>" placeholder="abc@mail.com">
-                            <?= form_error('email'); ?>
+                            <input type="email" name="email" class="form-control" value="<?=set_value('email');?>" placeholder="abc@mail.com">
+                            <?=form_error('email');?>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" name="password" class="form-control" value="<?= set_value('password'); ?>" placeholder="Password">
-                            <?= form_error('password'); ?>
+                            <input type="password" name="password" class="form-control" value="<?=set_value('password');?>" placeholder="Password">
+                            <?=form_error('password');?>
                         </div>
                         <div class="mt-4">
-                            <button type="submit" class="btn btn-outline-primary btn-block btn-lg">Sign Up</button>
+                            <button type="submit" class="btn btn-outline-primary btn-block btn-lg">Sign In</button>
                         </div>
                     </form>
                     <div class="text-center mt-5">
                         <p class="light-gray">Don't have an Account?
-                            <a href="<?= base_url("register"); ?>">Register Here.</a>
+                            <a href="<?=base_url("register");?>">Register Here.</a>
                         </p>
                     </div>
                 </div>
